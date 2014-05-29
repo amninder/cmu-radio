@@ -1,0 +1,135 @@
+//
+//  ViewController.m
+//  CMU-Radio
+//
+//  Created by Narota, Amninder Singh on 11/4/13.
+//  Copyright (c) 2013 Narota, Amninder Singh. All rights reserved.
+
+#import "ViewController.h"
+#import "Player.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+
+@interface ViewController (){
+    NSMutableData *webData;
+    NSURLConnection *connection;
+    NSMutableArray *array;
+    NSArray *allDataArray;
+    
+    NSString *stringForSegue;
+    NSString *name_for_segue;
+    NSString *urlForSegue;
+    
+    NSMutableDictionary *radioStations;
+}
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// initialize radio dictionary
+    radioStations = [NSMutableDictionary dictionary];
+    
+    
+    //set delegates for the tableview.
+    [[self myTableView]setDelegate:self];
+    [[self myTableView]setDataSource:self];
+    array = [[NSMutableArray alloc]init];
+    
+    [array removeAllObjects];
+    NSURL *url  = [NSURL URLWithString:@"http://0.0.0.0:5000/stations/?format=json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    if(connection){
+        webData = [[NSMutableData alloc]init];
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    [webData setLength:0];
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    [webData appendData:data];
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    NSLog(@"fail with error");
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    allDataArray = [NSJSONSerialization JSONObjectWithData:webData options:0 error:nil];
+    for (radioStations in allDataArray){
+        name_for_segue = [radioStations objectForKey:@"name"];
+        urlForSegue = [radioStations objectForKey:@"url"];
+        [array addObject:name_for_segue];
+    }
+    [[self myTableView]reloadData];
+    
+}
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [array count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = [array objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = @"Michigan";
+    cell.backgroundColor = [UIColor colorWithRed: (107.0/255.0) green: (17.0/255.0) blue: 0.0 alpha: 1.0];
+    return cell;
+}
+
+/*
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.backgroundColor = indexPath.row % 2
+    ? [UIColor colorWithRed: (107.0/255.0) green: (17.0/255.0) blue: 0.0 alpha: 1.0]
+    : [UIColor whiteColor];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    
+}
+ */
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    name_for_segue    = [array objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"forwardToPlayer" sender:self];
+    NSLog(@"Value is: %@", stringForSegue);
+    
+//    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:    [NSURL URLWithString:[array objectAtIndex:indexPath.row]]];
+//    player.movieSourceType = MPMovieSourceTypeStreaming;
+//    player.view.hidden = YES;
+//    [self.view addSubview:player.view];
+//    [player prepareToPlay];
+//    [player play];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"forwardToPlayer"]) {
+        //Player *cmu_player  = [segue destinationViewController];
+        //cmu_player.url = name_for_segue;
+        
+    }
+}
+
+@end
