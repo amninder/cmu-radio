@@ -56,7 +56,7 @@
     school_array    = [[NSMutableArray alloc]init];
     state_array     = [[NSMutableArray alloc]init];
     
-    NSURL *url  = [NSURL URLWithString:@"http://0.0.0.0:5000/stations/?format=json"];
+    NSURL *url  = [NSURL URLWithString:@"http://techops.cmich.edu/apps/radio/stations/?format=json"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if(connection){
