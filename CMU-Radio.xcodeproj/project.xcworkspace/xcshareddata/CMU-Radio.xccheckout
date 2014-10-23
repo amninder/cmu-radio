@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DE9DC6C4-438E-4CEA-A533-EC41716CF2A6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CMU-Radio</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>613E43CFD85ACAAC4F0634377696803A64112854</key>
+		<string>https://github.com/amninder/cmu-radio.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CMU-Radio.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>613E43CFD85ACAAC4F0634377696803A64112854</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/amninder/cmu-radio.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>613E43CFD85ACAAC4F0634377696803A64112854</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>613E43CFD85ACAAC4F0634377696803A64112854</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cmu-radio</string>
+		</dict>
+	</array>
+</dict>
+</plist>

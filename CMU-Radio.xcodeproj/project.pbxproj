@@ -21,8 +21,6 @@
 		491E78951828063800FFF738 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491E78771828063800FFF738 /* UIKit.framework */; };
 		491E789D1828063800FFF738 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 491E789B1828063800FFF738 /* InfoPlist.strings */; };
 		491E789F1828063800FFF738 /* CMU_RadioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 491E789E1828063800FFF738 /* CMU_RadioTests.m */; };
-		492933471833F0C4008B8074 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492933461833F0C4008B8074 /* GoogleMaps.framework */; };
-		492933491833F0D4008B8074 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 492933481833F0D4008B8074 /* GoogleMaps.bundle */; };
 		4929334B1833F0E9008B8074 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4929334A1833F0E9008B8074 /* CoreData.framework */; };
 		4929334D1833F0F0008B8074 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4929334C1833F0F0008B8074 /* CoreLocation.framework */; };
 		4929334F1833F0FF008B8074 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4929334E1833F0FF008B8074 /* CoreText.framework */; };
@@ -39,6 +37,7 @@
 		49CDF5D5183123D30048F7EF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CDF5D4183123D30048F7EF /* MediaPlayer.framework */; };
 		49CDF5D7183142FF0048F7EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CDF5D6183142FF0048F7EF /* MapKit.framework */; };
 		49E3DACF182ABB7C0063965F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E3DACE182ABB7C0063965F /* AVFoundation.framework */; };
+		E7050E8A19F8982300F6F9A8 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7050E8919F8982300F6F9A8 /* GoogleMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +70,6 @@
 		491E789A1828063800FFF738 /* CMU-RadioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CMU-RadioTests-Info.plist"; sourceTree = "<group>"; };
 		491E789C1828063800FFF738 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		491E789E1828063800FFF738 /* CMU_RadioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMU_RadioTests.m; sourceTree = "<group>"; };
-		492933461833F0C4008B8074 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
-		492933481833F0D4008B8074 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		4929334A1833F0E9008B8074 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4929334C1833F0F0008B8074 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4929334E1833F0FF008B8074 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -91,6 +88,7 @@
 		49CDF5D4183123D30048F7EF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		49CDF5D6183142FF0048F7EF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49E3DACE182ABB7C0063965F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E7050E8919F8982300F6F9A8 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../SDK/GoogleMaps-iOS-1.8.1/GoogleMaps.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7050E8A19F8982300F6F9A8 /* GoogleMaps.framework in Frameworks */,
 				4929335F1833F156008B8074 /* SystemConfiguration.framework in Frameworks */,
 				4929335D1833F14D008B8074 /* QuartzCore.framework in Frameworks */,
 				4929335B1833F144008B8074 /* OpenGLES.framework in Frameworks */,
@@ -110,7 +109,6 @@
 				4929334D1833F0F0008B8074 /* CoreLocation.framework in Frameworks */,
 				4929334B1833F0E9008B8074 /* CoreData.framework in Frameworks */,
 				49CDF5D7183142FF0048F7EF /* MapKit.framework in Frameworks */,
-				492933471833F0C4008B8074 /* GoogleMaps.framework in Frameworks */,
 				49CDF5D5183123D30048F7EF /* MediaPlayer.framework in Frameworks */,
 				49E3DACF182ABB7C0063965F /* AVFoundation.framework in Frameworks */,
 				491E78761828063800FFF738 /* CoreGraphics.framework in Frameworks */,
@@ -154,6 +152,7 @@
 		491E78721828063800FFF738 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7050E8919F8982300F6F9A8 /* GoogleMaps.framework */,
 				4929335E1833F156008B8074 /* SystemConfiguration.framework */,
 				4929335C1833F14D008B8074 /* QuartzCore.framework */,
 				4929335A1833F144008B8074 /* OpenGLES.framework */,
@@ -165,8 +164,6 @@
 				4929334E1833F0FF008B8074 /* CoreText.framework */,
 				4929334C1833F0F0008B8074 /* CoreLocation.framework */,
 				4929334A1833F0E9008B8074 /* CoreData.framework */,
-				492933481833F0D4008B8074 /* GoogleMaps.bundle */,
-				492933461833F0C4008B8074 /* GoogleMaps.framework */,
 				49CDF5D6183142FF0048F7EF /* MapKit.framework */,
 				49CDF5D4183123D30048F7EF /* MediaPlayer.framework */,
 				49E3DACE182ABB7C0063965F /* AVFoundation.framework */,
@@ -328,7 +325,6 @@
 				491E788C1828063800FFF738 /* Images.xcassets in Resources */,
 				491E787E1828063800FFF738 /* InfoPlist.strings in Resources */,
 				491E78871828063800FFF738 /* Main.storyboard in Resources */,
-				492933491833F0D4008B8074 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +479,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/narot1a/projects/Xcode/CMU-Radio",
+					"/Users/iNarota/SDK/GoogleMaps-iOS-1.8.1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMU-Radio/CMU-Radio-Prefix.pch";
@@ -500,6 +497,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/narot1a/projects/Xcode/CMU-Radio",
+					"/Users/iNarota/SDK/GoogleMaps-iOS-1.8.1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMU-Radio/CMU-Radio-Prefix.pch";
